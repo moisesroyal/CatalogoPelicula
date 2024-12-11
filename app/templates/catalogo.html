@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="{{ url_for('catalogo', categoria='accion') }}">Acción</a></li>
+            <li><a href="{{ url_for('catalogo', categoria='horror') }}">Horror</a></li>
+            <li><a href="{{ url_for('catalogo', categoria='infantil') }}">Infantil</a></li>
+            <li><a href="{{ url_for('catalogo', categoria='documental') }}">Documental</a></li>
+            <li><a href="{{ url_for('catalogo', categoria='comedia') }}">Comedia</a></li>
+        </ul>
+    </div>
+
+    <div class="categoria {% if categoria %}fondo-{{ categoria }}{% endif %}">
+        <div class="portadas">
+            {% for pelicula in peliculas %}
+                <div class="portada">
+                    <img src="{{ pelicula.imagen }}" alt="{{ pelicula.nombre }}">
+                    <p>{{ pelicula.nombre }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
+
+<div class="fondo-accion">
+    <!-- Portada de Deadpool & Wolverine -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/533535/deadpool-and-wolverine">
+            <img src="/static/images/Deadpool_Wolverine.jpg" alt="Deadpool & Wolverine">
+        </a>
+    </div>
+
+    <!-- Portada de Godzilla y Kong: El nuevo imperio -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/823464/godzilla-y-kong-el-nuevo-imperio">
+            <img src="/static/images/Godzilla_Kong.jpg" alt="Godzilla y Kong: El nuevo imperio">
+        </a>
+    </div>
+
+    <!-- Portada de El Escuadrón Suicida -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/436969/el-escuadron-suicida">
+            <img src="/static/images/Escuadron_Suicida.jpg" alt="El Escuadrón Suicida">
+        </a>
+    </div>
+
+    <!-- Portada de Depredador: La presa -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/766507/depredador-la-presa">
+            <img src="/static/images/Predator_Presa.jpg" alt="Depredador: La presa">
+        </a>
+    </div>
+
+    <!-- Portada de Titanes Del Pacífico -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/68726/titanes-del-pacifico">
+            <img src="/static/images/Titanes.jpg" alt="Titanes Del Pacífico">
+        </a>
+    </div>
+
+    <!-- Portada de Guardianes de la Galaxia volumen 3 -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/447365/guardianes-de-la-galaxia-volumen-3">
+            <img src="/static/images/Guardianes.jpg" alt="Guardianes de la Galaxia volumen 3">
+        </a>
+    </div>
+
+    <!-- Portada de Avengers: Endgame -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/299534/avengers-endgame">
+            <img src="/static/images/Avengers_Endgame.jpg" alt="Avengers: Endgame">
+        </a>
+    </div>
+
+    <!-- Portada de La Liga de la Justicia de Zack Snyder -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/791373/la-liga-de-la-justicia-de-zack-snyder">
+            <img src="/static/images/Liga_Justicia.jpg" alt="La Liga de la Justicia de Zack Snyder">
+        </a>
+    </div>
+
+    <!-- Portada de xXx Reactivado -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/47971/xxx-reactivado">
+            <img src="/static/images/XXX_Reactivado.jpg" alt="xXx Reactivado">
+        </a>
+    </div>
+
+    <!-- Portada de Top Gun Maverick -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/361743/top-gun-maverick">
+            <img src="/static/images/TopGun_Maverick.jpg" alt="Top Gun Maverick">
+        </a>
+    </div>
+</div>
+
+<div class="fondo-horror">
+    <!-- Portada de Alien: Romulus -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/945961/alien-romulus">
+            <img src="/static/images/Alien_Romulus.jpg" alt="Alien: Romulus">
+        </a>
+    </div>
+
+    <!-- Portada de La sustancia -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/933260/la-sustancia">
+            <img src="/static/images/La_Sustancia.jpg" alt="La sustancia">
+        </a>
+    </div>
+
+    <!-- Portada de No hables con extraños -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/1114513/no-hables-con-extranos">
+            <img src="/static/images/No_hables_con_extraños.jpg" alt="No hables con extraños">
+        </a>
+    </div>
+
+    <!-- Portada de Alien: El Octavo Pasajero -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/348/alien-el-octavo-pasajero">
+            <img src="/static/images/Alien_octavo_pasajero.jpg" alt="Alien: El Octavo Pasajero">
+        </a>
+    </div>
+
+    <!-- Portada de Algea: God of Pain -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/1201734/algea-god-of-pain">
+            <img src="/static/images/Algea_God_Pain.jpg" alt="Algea: God of Pain">
+        </a>
+    </div>
+
+    <!-- Portada de El misterio de Soho -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/576845/el-misterio-de-soho">
+            <img src="/static/images/Misterio_soho.jpg" alt="El misterio de Soho">
+        </a>
+    </div>
+
+    <!-- Portada de You Shall Not Sleep Tonight -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/1265517/you-shall-not-sleep-tonight">
+            <img src="/static/images/You_Shall_Not_Sleep.jpg" alt="You Shall Not Sleep Tonight">
+        </a>
+    </div>
+
+    <!-- Portada de Exhuma: La Tumba Del Diablo -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/838209/exhuma-la-tumba-del-diablo">
+            <img src="/static/images/Exhuma.jpg" alt="Exhuma: La Tumba Del Diablo">
+        </a>
+    </div>
+
+    <!-- Portada de El Aro: Resurrección -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/767585/el-aro-resurreccion">
+            <img src="/static/images/Aro_Resurrección.jpg" alt="El Aro: Resurrección">
+        </a>
+    </div>
+
+    <!-- Portada de El Conjuro -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/138843/el-conjuro">
+            <img src="/static/images/El_conjuro.png" alt="El Conjuro">
+        </a>
+    </div>
+</div>
+
+<div class="fondo-comedia">
+    <!-- Portada de Son Como Niños -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/38365/son-como-ninos">
+            <img src="/static/images/Como_ninos.jpg" alt="Son Como Niños">
+        </a>
+    </div>
+
+    <!-- Portada de Guy Manley - A Real Movie -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/1181214/guy-manley-a-real-movie">
+            <img src="/static/images/Guy_Manley.jpg" alt="Guy Manley - A Real Movie">
+        </a>
+    </div>
+
+    <!-- Portada de El Tiempo Que Tenemos -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/1100099/el-tiempo-que-tenemos">
+            <img src="/static/images/El_Tiempo_Que_Tenemos.jpg" alt="El Tiempo Que Tenemos">
+        </a>
+    </div>
+
+    <!-- Portada de Beetlejuice Beetlejuice -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/917496/beetlejuice-beetlejuice">
+            <img src="/static/images/Beetlejuice.jpg" alt="Beetlejuice Beetlejuice">
+        </a>
+    </div>
+
+    <!-- Portada de Culpa cero -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/1212755/culpa-cero">
+            <img src="/static/images/Culpa_cero.jpg" alt="Culpa cero">
+        </a>
+    </div>
+
+    <!-- Portada de No, porque me enamoro -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/720873/no-porque-me-enamoro">
+            <img src="/static/images/Me_Enamoro.jpg" alt="No, porque me enamoro">
+        </a>
+    </div>
+
+    <!-- Portada de El mesero -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/678580/el-mesero">
+            <img src="/static/images/El_mesero.jpg" alt="El mesero">
+        </a>
+    </div>
+
+    <!-- Portada de Qué León -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/567452/que-leon">
+            <img src="/static/images/Que_leon.jpg" alt="Qué León">
+        </a>
+    </div>
+
+    <!-- Portada de La noche mágica -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/630520/la-noche-magica">
+            <img src="/static/images/Noche_magica.jpg" alt="La noche mágica">
+        </a>
+    </div>
+
+    <!-- Portada de Misfit, eres o te haces -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/893941/misfit-eres-o-te-haces">
+            <img src="/static/images/Misfit.jpg" alt="Misfit, eres o te haces">
+        </a>
+    </div>
+</div>
+
+<div class="fondo-infantil">
+    <!-- Portada de Ice Age: Las aventuras de Buck -->
+    <div class="portada">
+        <a href="https://www.cuevana.mobi/pelicula/774825/ice-age-las-aventuras-de-buck">
+            <img src="/static/images/Buck_adventures.jpg" alt="Ice Age: Las aventuras de Buck">
+        </a>
+    </div>
+
+    <!-- Portada de Naruto Shippuden 6 El camino del Ninja -->
+    <div class="portada">
+        <a href="https://www.cuevana.mobi/pelicula/118406/road-to-ninja-naruto-la-pelicula">
+            <img src="/static/images/Naruto.png" alt="Naruto Shippuden 6 El camino del Ninja">
+        </a>
+    </div>
+
+    <!-- Portada de La Patrulla Canina: La película -->
+    <div class="portada">
+        <a href="https://www.cuevana.mobi/pelicula/675445/la-patrulla-canina-la-pelicula">
+            <img src="/static/images/Paw_Patrol.jpg" alt="La Patrulla Canina: La película">
+        </a>
+    </div>
+
+    <!-- Portada de En el bosque de la luz de las luciérnagas -->
+    <div class="portada">
+        <a href="https://www.cuevana.mobi/pelicula/92321/en-el-bosque-de-la-luz-de-las-luciernagas">
+            <img src="/static/images/Bosque_luz.jpg" alt="En el bosque de la luz de las luciérnagas">
+        </a>
+    </div>
+
+    <!-- Portada de Shrek -->
+    <div class="portada">
+        <a href="https://www.cuevana.mobi/pelicula/808/shrek">
+            <img src="/static/images/Shrek.jpg" alt="Shrek">
+        </a>
+    </div>
+
+    <!-- Portada de El Gato con Botas: El último deseo -->
+    <div class="portada">
+        <a href="https://www.cuevana.mobi/pelicula/315162/el-gato-con-botas-el-ultimo-deseo">
+            <img src="/static/images/Gato_bota.png" alt="El Gato con Botas: El último deseo">
+        </a>
+    </div>
+
+    <!-- Portada de Your Name -->
+    <div class="portada">
+        <a href="https://www.cuevana.mobi/pelicula/372058/your-name">
+            <img src="/static/images/Your_name.jpg" alt="Your Name">
+        </a>
+    </div>
+
+    <!-- Portada de Spider-Man: un nuevo universo -->
+    <div class="portada">
+        <a href="https://www.cuevana.mobi/pelicula/324857/spider-man-un-nuevo-universo">
+            <img src="/static/images/Spider_Man.png" alt="Spider-Man: un nuevo universo">
+        </a>
+    </div>
+
+    <!-- Portada de Coco -->
+    <div class="portada">
+        <a href="https://www.cuevana.mobi/pelicula/354912/coco">
+            <img src="/static/images/Coco.jpg" alt="Coco">
+        </a>
+    </div>
+
+    <!-- Portada de Mi vecino Totoro -->
+    <div class="portada">
+        <a href="https://www.cuevana.mobi/pelicula/8392/mi-vecino-totoro">
+            <img src="/static/images/Totoro.png" alt="Mi vecino Totoro">
+        </a>
+    </div>
+</div>
+
+<div class="fondo-documental">
+    <!-- Portada de Yo no me llamo Rubén Blades -->
+    <div class="portada">
+        <a href="https://www.cuevana.mobi/pelicula/502189/yo-no-me-llamo-ruben-blades">
+            <img src="/static/images/Ruben.jpg" alt="Yo no me llamo Rubén Blades">
+        </a>
+    </div>
+
+    <!-- Portada de Schumacher -->
+    <div class="portada">
+        <a href="https://www.cuevana.mobi/pelicula/855823/schumacher">
+            <img src="/static/images/Schumacher.jpg" alt="Schumacher">
+        </a>
+    </div>
+
+    <!-- Portada de The Lionheart -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/1115329/the-lionheart">
+            <img src="/static/images/The_Lionheart.jpg" alt="The Lionheart">
+        </a>
+    </div>
+
+    <!-- Portada de Muchachos, la película de la gente -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/1206029/muchachos-la-pelicula-de-la-gente">
+            <img src="/static/images/Muchachos.jpg" alt="Muchachos, la película de la gente">
+        </a>
+    </div>
+
+    <!-- Portada de Pelé: King of the Game -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/1223859/pele-king-of-the-game">
+            <img src="/static/images/Pele.jpg" alt="Pelé: King of the Game">
+        </a>
+    </div>
+
+    <!-- Portada de Rubius X -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/912826/rubius-x">
+            <img src="/static/images/Rubius_X.jpg" alt="Rubius X">
+        </a>
+    </div>
+
+    <!-- Portada de The Wall: Climb for Gold -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/887143/the-wall-climb-for-gold">
+            <img src="/static/images/The_Wall_Climb_for_Gold.jpg" alt="The Wall: Climb for Gold">
+        </a>
+    </div>
+
+    <!-- Portada de Dardara -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/797233/dardara">
+            <img src="/static/images/Dardara.jpg" alt="Dardara">
+        </a>
+    </div>
+
+    <!-- Portada de My Next Challenge -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/755646/my-next-challenge">
+            <img src="/static/images/Next.jpg" alt="My Next Challenge">
+        </a>
+    </div>
+
+    <!-- Portada de Tierra -->
+    <div class="portada">
+        <a href="https://cuevana.biz/pelicula/395985/tierra">
+            <img src="/static/images/Tierra.jpg" alt="Tierra">
+        </a>
+    </div>
+</div>
+

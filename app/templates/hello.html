@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macros %}
+
+{% block title %}
+    {{ super() }}
+    Bienvenido
+{% endblock %}
+
+{% block content %}
+<div style="background-image: url('/static/palomitas.jpeg'); background-size: cover; background-position: center; background-attachment: fixed; padding: 20px;">
+    {% if username %}
+        <h1>Bienvenido, {{ username | capitalize }}</h1>
+    {% endif %}
+
+    {% if user_ip %}
+        <h3>Tu IP es {{ user_ip }}</h3>
+    {% else %}
+        <a href="{{ url_for('index') }}">Ir a inicio</a>
+    {% endif %}
+
+
+    <div class="container mt-4">
+        <a href="{{ url_for('catalogo', categoria='accion') }}" class="btn btn-primary">Ir al catálogo de películas</a>
+    </div>
+
+    <div class="container mt-4">
+        <h2>Crea una nueva película</h2>
+        <form method="POST">
+            {{ todo_form.csrf_token }}
+            <div class="form-group">
+                <label for="movie_name">Nombre de la película</label>
+                {{ todo_form.description(class="form-control", id="movie_name") }}
+            </div>
+            <div class="form-group">
+                <label for="category">Categoría</label>
+                {{ todo_form.email(class="form-control", id="category") }}
+            </div>
+            <div class="form-group">
+                <label for="duration">Duración (en minutos)</label>
+                {{ todo_form.company(class="form-control", id="duration") }}
+            </div>
+            <div class="form-group">
+                <label for="director">Director</label>
+                {{ todo_form.job_title(class="form-control", id="director") }}
+            </div>
+            <div class="form-group">
+                <label for="username">Nombre de usuario</label>
+                {{ todo_form.client(class="form-control", id="username") }}
+            </div>
+            <div class="form-group">
+                {{ todo_form.submit(class="btn btn-primary") }}
+            </div>
+        </form>
+    </div>
+
+    <ul class="list-group mt-4">
+        {% for todo in todos %}
+            <li class="list-group-item">
+                <p><strong>Nombre de la película:</strong> {{ todo.description }}</p>
+                <p><strong>Categoría:</strong> {{ todo.email }}</p>
+                <p><strong>Duración:</strong> {{ todo.company }} minutos</p>
+                <p><strong>Director:</strong> {{ todo.job_title }}</p>
+                <p><strong>Nombre de usuario:</strong> {{ todo.client }}</p>
+    
+                <div class="d-flex mt-2">
+                    <form method="GET" action="{{ url_for('update', todo_id=todo.id) }}" class="me-2">
+                        <button class="btn btn-primary btn-sm" type="submit">Actualizar</button>
+                    </form>
+                    <form method="POST" action="{{ url_for('delete', todo_id=todo.id) }}">
+                        {{ delete_form.csrf_token }}
+                        <button class="btn btn-danger btn-sm" type="submit">Borrar</button>
+                    </form>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas</title>
+</head>
+<body>
+    <h1>Tareas del usuario</h1>
+
+    <ul>
+        {% for task in tasks %}
+            <li>
+                <p><strong>Descripcion:</strong> {{ task.description }}</p>
+                <p><strong>Correo electrónico:</strong> {{ task.email }}</p>
+                <p><strong>Empreza:</strong> {{ task.company }}</p>
+                <p><strong>Puesto de trabajo:</strong> {{ task.job_title }}</p>
+                <p><strong>Cliente:</strong> {{ task.client }}</p>
+            </li>
+        {% else %}
+            <li>No tienes tareas.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

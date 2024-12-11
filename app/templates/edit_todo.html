@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h2>Editar tarea</h2>
+    <form method="POST" action="{{ url_for('update', todo_id=todo.id) }}">
+        {{ update_form.csrf_token }}
+        <div class="form-group">
+            <label for="description">Descripción</label>
+            <input type="text" name="description" class="form-control" value="{{ todo.description }}">
+        </div>
+        <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="text" name="email" class="form-control" value="{{ todo.email }}">
+        </div>
+        <div class="form-group">
+            <label for="company">Compañía</label>
+            <input type="text" name="company" class="form-control" value="{{ todo.company }}">
+        </div>
+        <div class="form-group">
+            <label for="job_title">Puesto de trabajo</label>
+            <input type="text" name="job_title" class="form-control" value="{{ todo.job_title }}">
+        </div>
+        <div class="form-group">
+            <label for="client">Cliente</label>
+            <input type="text" name="client" class="form-control" value="{{ todo.client }}">
+        </div>
+        <div class="form-group mt-3">
+            <button type="submit" class="btn btn-success">Guardar cambios</button>
+            <a href="{{ url_for('hello') }}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+<!-- Navbar -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <!-- Logo -->
+            <a class="navbar-brand" href="{{ url_for('index') }}">
+                
+            </a>
+        </div>
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                {% if current_user.is_authenticated %}
+                    <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+                {% endif %}
+                <li><a href="{{ url_for('index') }}">Inicio</a></li>
+                <li><a href="https://platzi.com" target="_blank">Platzi</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+

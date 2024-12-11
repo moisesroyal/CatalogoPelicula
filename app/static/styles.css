@@ -1,0 +1,91 @@
+.fondo-accion {
+    background-image: url("/static/images/Fondo_Accion1.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.fondo-horror {
+    background-image: url("/static/images/Fondo_Horror.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.fondo-infantil {
+    background-image: url("/static/images/Fondo_Infantil_Collage.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.fondo-documental {
+    background-image: url("/static/images/Documental.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.fondo-comedia {
+    background-image: url("/static/images/Fondo_Comedia_Collage.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu ul li {
+    display: inline;
+    margin: 10px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+/* Contenedor de las portadas */
+.fondo-documental,
+.fondo-infantil,
+.fondo-accion,
+.fondo-horror,
+.fondo-comedia {
+    display: flex; /* Organiza los elementos en una fila */
+    flex-wrap: wrap; /* Permite que las portadas pasen a la siguiente fila si no caben */
+    justify-content: center; /* Centra las portadas horizontalmente */
+    align-items: center; /* Alinea las portadas verticalmente */
+    gap: 15px; /* Espaciado entre portadas */
+    padding: 20px; /* Espaciado interno para no pegar las portadas a los bordes */
+}
+
+/* Cada portada individual */
+.portada {
+    flex: 0 1 calc(20% - 30px); /* Cada portada ocupa el 20% del ancho del contenedor menos el espacio del gap */
+    max-width: 200px; /* Ancho máximo */
+    text-align: center; /* Centra el contenido dentro de la portada */
+}
+
+/* Las imágenes de las portadas */
+.portada img {
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor de la portada */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega sombra para darle profundidad */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza el efecto al pasar el mouse */
+}
+
+/* Efecto hover en las imágenes */
+.portada img:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Aumenta la sombra */
+}
+

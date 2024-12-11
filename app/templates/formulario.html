@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Tareas</title>
+</head>
+<body>
+    <h1>Crear una Tarea</h1>
+    <form id="taskForm">
+        <input type="text" name="descripcion" placeholder="Descripción" required>
+        <input type="text" name="empreza" placeholder="Empresa" required>
+        <input type="email" name="correo" placeholder="Correo" required>
+        <input type="text" name="cliente" placeholder="Cliente" required>
+        <input type="text" name="puesto_trabajo" placeholder="Puesto de Trabajo" required>
+        <button type="submit">Crear Tarea</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('taskForm');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const response = await fetch('/create_task', {
+                method: 'POST',
+                body: formData
+            });
+            const result = await response.json();
+            if (result.status === 'success') {
+                alert('Tarea creada');
+            }
+        });
+    </script>
+</body>
+</html>
